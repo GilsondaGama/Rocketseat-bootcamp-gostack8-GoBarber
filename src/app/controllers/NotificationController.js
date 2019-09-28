@@ -15,7 +15,7 @@ class NotificationController {
     }
 
     const notifications = await Notification.find({
-      user: req.userId,
+      user: req.userId, // Número do Usuário com ERROO ************
     })
       .sort({ createdAt: 'desc' })
       .limit(20);
@@ -25,3 +25,5 @@ class NotificationController {
 }
 
 export default new NotificationController();
+
+// req.userId
