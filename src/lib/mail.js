@@ -14,6 +14,8 @@ class Mail {
       secure,
       auth: auth.user ? auth : null,
     });
+
+    this.configureTemplates();
   }
 
   configureTemplates() {
@@ -22,7 +24,7 @@ class Mail {
       'compile',
       nodemailerhbs({
         viewEngine: exphbs.create({
-          layoutsDir: resolve(viewPath, 'Layouts'),
+          layoutsDir: resolve(viewPath, 'layouts'),
           partialsDir: resolve(viewPath, 'partials'),
           defaultLayouts: 'default',
           extname: '.hbs',
